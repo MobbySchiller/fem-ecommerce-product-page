@@ -11,57 +11,80 @@
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header__hamburger"></div>
-    <a href="" class="header__logo"></a>
-    <nav class="header__nav-mobile">
-      <div class="nav-close-icon"></div>
-      <ul class="nav-list">
-        <li class="nav-list__element"><a href="#" class="nav-list__link">Collections</a></li>
-        <li class="nav-list__element"><a href="#" class="nav-list__link">Men</a></li>
-        <li class="nav-list__element"><a href="#" class="nav-list__link">Women</a></li>
-        <li class="nav-list__element"><a href="#" class="nav-list__link">About</a></li>
-        <li class="nav-list__element"><a href="#" class="nav-list__link">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="header__cart"></div>
-    <div class="header__avatar"></div>
-  </header>
-  <main class="offer">
-    <section class="gallery">
-      <div class="gallery-desktop">
-        <img src="images/image-product-1.jpg" alt="" class="gallery-desktop__main">
-        <div class="gallery-desktop__carousel">
-          <img src="images/image-product-1-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-          <img src="images/image-product-2-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-          <img src="images/image-product-3-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-          <img src="images/image-product-4-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+  <div class="container">
+    <header class="header">
+      <div class="header__left-side">
+        <div class="hamburger"></div>
+        <a href="#" class="logo-link"><div class="logo"></div></a>
+        <nav class="nav">
+          <div class="nav__close-icon"></div>
+          <ul class="nav__list">
+            <li class="nav__list-element"><a href="#" class="nav__list-link">Collections</a></li>
+            <li class="nav__list-element"><a href="#" class="nav__list-link">Men</a></li>
+            <li class="nav__list-element"><a href="#" class="nav__list-link">Women</a></li>
+            <li class="nav__list-element"><a href="#" class="nav__list-link">About</a></li>
+            <li class="nav__list-element"><a href="#" class="nav__list-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__right-side">
+        <div class="cart-icon"></div>
+        <div class="avatar"></div>
+      </div>
+    </header>
+    <div class="cart">
+      <p class="cart__title">Cart</p>
+      <div class="cart__container">
+        <p class="info invisible">Your cart is empty.</p>
+        <div class="element">
+          <div class="element__pic"></div>
+          <div class="element__desc">
+            <p class="element__name">Autumn Limited Edition</p>
+            <p class="element__details">
+              <span class="element__details-price">$125.00</span> x <span class="element__details-quantity">3</span> <span class="element__details-sum">$375.00</span>
+            </p>
+          </div>
+          <div class="element__remove"></div>
         </div>
+        <button class="cart__button">Checkout</button>
       </div>
-      <div class="gallery-lighthouse">
-      </div>
-    </section>
-    <section class="slider-mobile">
-        <div class="slider-mobile__left-arrow"></div>
-        <img src="images/image-product-1.jpg" alt="" class="slider-mobile__image">
-        <div class="slider-mobile__right-arrow"></div>
-    </section>
-    <section class="details">
-      <h1 class="details__company-name">Sneaker Company</h1>
-      <h2 class="details__model-name">Fall Limited Edition Sneakers</h2>
-      <p class="details__description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-      <p class="details__price">$125.00</p>
-      <div class="details__buy">
-        <div class="couter">
-          <div class="counter__remove"></div>
-          <div class="counter__quantity">0</div>
-          <div class="counter__add"></div>
+    </div>
+    <!-- <main class="offer">
+      <section class="gallery">
+        <div class="gallery-desktop">
+          <img src="images/image-product-1.jpg" alt="" class="gallery-desktop__main">
+          <div class="gallery-desktop__carousel">
+            <img src="images/image-product-1-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+            <img src="images/image-product-2-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+            <img src="images/image-product-3-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+            <img src="images/image-product-4-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+          </div>
         </div>
-        <button class="add-button">Add to cart</button>
-      </div>
-    </section>
-  </main>
+        <div class="gallery-lighthouse">
+        </div>
+      </section>
+      <section class="slider-mobile">
+          <div class="slider-mobile__left-arrow"></div>
+          <img src="images/image-product-1.jpg" alt="" class="slider-mobile__image">
+          <div class="slider-mobile__right-arrow"></div>
+      </section>
+      <section class="details">
+        <h1 class="details__company-name">Sneaker Company</h1>
+        <h2 class="details__model-name">Fall Limited Edition Sneakers</h2>
+        <p class="details__description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <p class="details__price">$125.00</p>
+        <div class="details__buy">
+          <div class="couter">
+            <div class="counter__remove"></div>
+            <div class="counter__quantity">0</div>
+            <div class="counter__add"></div>
+          </div>
+          <button class="add-button">Add to cart</button>
+        </div>
+      </section>
+    </main> -->
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/MobbySchiller">Krzysztof Burzyński</a>.
