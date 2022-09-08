@@ -1,0 +1,111 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.cart {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    width: 95%;
+    max-width: 350px;
+    margin-top: 5px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: $white;
+
+    @include mq(small) {
+        right: 0;
+        transform: translateX(0);
+    }
+
+    @include mq(medium) {
+        top: 70px;
+        box-shadow: 0 2px 6px 1px $dark-grayish-blue;
+    }
+
+    @include mq(large) {
+        right: 10%;
+    }
+
+    @include mq(extra-large) {
+        right: 25%;
+    }
+
+    &__title {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light-grayish-blue;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .info {
+            padding: 50px 0;
+            color: $dark-grayish-blue;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .element {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 12px 0;
+            font-size: 1.4rem;
+
+            &.invisible {
+                display: none
+            }
+
+            &__pic {
+                @include bgc-img(50px, 50px, image-product-1-thumbnail, jpg);
+                margin-right: 15px;
+                border-radius: 4px;
+            }
+
+            &__desc {
+                color: $dark-grayish-blue;
+                font-weight: 700;
+            }
+
+            &__details {
+                word-spacing: 3px;
+
+                &-sum {
+                    color: $black;
+                }
+            }
+
+            &__remove {
+                @include bgc-img(14px, 16px, icon-delete, svg);
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: 12px;
+        border: 0;
+        border-radius: 8px;
+        background-color: $orange;
+        color: $white;
+        font-size: 1.4rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($orange, 10%);
+        }
+    }
+}
+
+.invisible {
+    display: none;
+}
