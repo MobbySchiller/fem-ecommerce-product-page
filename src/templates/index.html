@@ -5,19 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | E-commerce product page</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <div class="container">
+    <div class="dark-background" id="dark-bgd"></div>
     <header class="header">
       <div class="header__left-side">
-        <div class="hamburger"></div>
+        <div class="hamburger" id="open-nav-btn"></div>
         <a href="#" class="logo-link"><div class="logo"></div></a>
-        <nav class="nav">
-          <div class="nav__close-icon"></div>
+        <nav class="nav" id="navigation">
+          <div class="nav__close-icon" id="close-nav-btn"></div>
           <ul class="nav__list">
             <li class="nav__list-element"><a href="#" class="nav__list-link">Collections</a></li>
             <li class="nav__list-element"><a href="#" class="nav__list-link">Men</a></li>
@@ -28,62 +25,74 @@
         </nav>
       </div>
       <div class="header__right-side">
-        <div class="cart-icon"></div>
+        <div class="cart-icon" id="cart-icon">
+          <div class="cart-icon-number" id="cart-icon-number"></div>
+        </div>
         <div class="avatar"></div>
       </div>
     </header>
-    <div class="cart">
+    <div class="cart" id="cart-component">
       <p class="cart__title">Cart</p>
-      <div class="cart__container">
-        <p class="info invisible">Your cart is empty.</p>
-        <div class="element">
-          <div class="element__pic"></div>
-          <div class="element__desc">
-            <p class="element__name">Autumn Limited Edition</p>
-            <p class="element__details">
-              <span class="element__details-price">$125.00</span> x <span class="element__details-quantity">3</span> <span class="element__details-sum">$375.00</span>
-            </p>
-          </div>
-          <div class="element__remove"></div>
-        </div>
-        <button class="cart__button">Checkout</button>
+      <div class="cart__container" id="cart-container">
+        <p class="info info--active" id="cart-info">Your cart is empty.</p>
       </div>
+      <div class="element" id="cart-element">
+        <button class="cart__button" id="cart-btn">Checkout</button>
     </div>
-    <!-- <main class="offer">
-      <section class="gallery">
+    </div>
+
+    <main class="offer">
+      <section class="gallery" id="gallery">
         <div class="gallery-desktop">
-          <img src="images/image-product-1.jpg" alt="" class="gallery-desktop__main">
+          <img src="images/image-product-1.jpg" alt="product image" class="gallery-desktop__main">
           <div class="gallery-desktop__carousel">
-            <img src="images/image-product-1-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-            <img src="images/image-product-2-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-            <img src="images/image-product-3-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
-            <img src="images/image-product-4-thumbnail.jpg" alt="" class="gallery-desktop__carousel-element">
+            <img src="images/image-product-1-thumbnail.jpg" alt="product image" class="gallery-desktop__carousel-element gallery-desktop__carousel-element--active" data-id="1">
+            <img src="images/image-product-2-thumbnail.jpg" alt="product image" class="gallery-desktop__carousel-element" data-id="2">
+            <img src="images/image-product-3-thumbnail.jpg" alt="product image" class="gallery-desktop__carousel-element" data-id="3">
+            <img src="images/image-product-4-thumbnail.jpg" alt="product image" class="gallery-desktop__carousel-element" data-id="4">
           </div>
         </div>
-        <div class="gallery-lighthouse">
+        <div class="gallery-lightbox" id="lightbox-container">
+          <div class="gallery-lightbox__close-icon" id="lightbox-close-icon"></div>
+          <div class="gallery-lightbox__main">
+            <div class="gallery-lightbox__left-arrow" id="lightbox-left-arrow"></div>
+            <img src="images/image-product-1.jpg" alt="product image" class="gallery-lightbox__main-img" id="lightbox-main-img">
+            <div class="gallery-lightbox__right-arrow" id="lightbox-right-arrow"></div>
+          </div>
+          <div class="gallery-lightbox__carousel">
+            <img src="images/image-product-1-thumbnail.jpg" alt="product image" class="gallery-lightbox__carousel-element" data-id="1">
+            <img src="images/image-product-2-thumbnail.jpg" alt="product image" class="gallery-lightbox__carousel-element" data-id="2">
+            <img src="images/image-product-3-thumbnail.jpg" alt="product image" class="gallery-lightbox__carousel-element" data-id="3">
+            <img src="images/image-product-4-thumbnail.jpg" alt="product image" class="gallery-lightbox__carousel-element" data-id="4">
+          </div>
         </div>
       </section>
-      <section class="slider-mobile">
-          <div class="slider-mobile__left-arrow"></div>
-          <img src="images/image-product-1.jpg" alt="" class="slider-mobile__image">
-          <div class="slider-mobile__right-arrow"></div>
+      <section class="slider-mobile" id="slider-mobile">
+          <div class="slider-mobile__left-arrow" id="mobile-left-arrow"></div>
+          <div class="slider-mobile__right-arrow" id="mobile-right-arrow"></div>
       </section>
       <section class="details">
         <h1 class="details__company-name">Sneaker Company</h1>
-        <h2 class="details__model-name">Fall Limited Edition Sneakers</h2>
+        <h2 class="details__model-name" id="product-name">Fall Limited Edition Sneakers</h2>
         <p class="details__description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
           durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-        <p class="details__price">$125.00</p>
-        <div class="details__buy">
-          <div class="couter">
-            <div class="counter__remove"></div>
-            <div class="counter__quantity">0</div>
-            <div class="counter__add"></div>
+        <div class="details__price">
+          <div class="price__current">
+            <p class="price__current-value" id="current-price">$125.00</p>
+            <p class="price__current-discount">50%</p>
           </div>
-          <button class="add-button">Add to cart</button>
+          <p class="price__previous">$250.00</p>
+        </div>
+        <div class="details__buy">
+          <div class="counter">
+            <div class="counter__remove" id="quantity-remove"></div>
+            <div class="counter__quantity" id="quantity-counter">0</div>
+            <div class="counter__add" id="quantity-add"></div>
+          </div>
+          <button class="add-button" id="add-to-cart"><div class="add-button__icon"></div>Add to cart</button>
         </div>
       </section>
-    </main> -->
+    </main>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
