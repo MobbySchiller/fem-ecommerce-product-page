@@ -1,10 +1,6 @@
 @import '../../sass/variables';
 @import '../../sass/mixins';
 
-body {
-    background-color: red;
-}
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -33,7 +29,11 @@ body {
             display: none;
         }
 
-        margin-right: 12px;
+        margin-right: 18px;
+
+        &:active {
+            filter: brightness(0);
+        }
     }
 
     .logo-link {
@@ -46,14 +46,20 @@ body {
     }
 
     .nav {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: -250px;
         width: 65%;
         max-width: 250px;
         height: 100vh;
-        padding: 15px 20px;
-        z-index: 2;
+        padding: 22px 21px;
+        background-color: $white;
+        z-index: 999;
+        transition: .2s;
+
+        &--active {
+            left: 0;
+        }
 
         @include mq(medium) {
             position: unset;
@@ -68,6 +74,10 @@ body {
 
             @include mq(medium) {
                 display: none;
+            }
+
+            &:active {
+                filter: brightness(0);
             }
         }
 
@@ -113,6 +123,10 @@ body {
                 font-weight: 700;
                 text-decoration: none;
 
+                &:active {
+                    color: $orange;
+                }
+
                 @include mq(medium) {
                     color: $grayish-blue;
 
@@ -130,14 +144,27 @@ body {
     align-items: center;
 
     .cart-icon {
+        position: relative;
         margin-right: 12px;
         @include bgc-img(22px, 20px, icon-cart, svg);
         cursor: pointer;
 
         &:hover {
-            color: $black;
             filter: brightness(0);
+        }
 
+        &-number {
+            display: block;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 18px;
+            border-radius: 6px;
+            background-color: $orange;
+            color: $white;
+            font-size: 9px;
+            font-weight: 700;
+            text-align: center;
         }
 
         @include mq(medium) {
@@ -155,8 +182,23 @@ body {
             height: 45px;
 
             &:hover {
-                box-shadow: 0 0 0 1px $orange;
+                box-shadow: 0 0 0 2px $orange;
             }
         }
+    }
+}
+
+.dark-background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $very-dark-blue;
+    opacity: 0.7;
+    visibility: hidden;
+    z-index: 998;
+
+    &--active {
+        visibility: visible;
     }
 }

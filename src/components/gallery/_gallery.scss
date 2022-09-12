@@ -1,0 +1,57 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(medium) {
+        flex-direction: row;
+    }
+
+    .gallery {
+        display: none;
+        width: 45%;
+
+        @include mq(medium) {
+            display: block;
+        }
+
+        &-desktop {
+
+            padding: 15px 25px;
+
+            @include mq(big) {
+                padding: 25px 70px;
+            }
+
+            &__main {
+                width: 100%;
+                margin-bottom: 3%;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            &__carousel {
+                display: flex;
+                justify-content: space-between;
+
+                &-element {
+                    width: 22%;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+
+                    &--active {
+                        box-shadow: 0 0 0 2px $orange;
+                    }
+                }
+            }
+        }
+    }
+
+}

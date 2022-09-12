@@ -1,0 +1,105 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    aspect-ratio: 13 / 16;
+    background-color: transparent;
+    z-index: 1000;
+
+    &--active {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__main {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 15px;
+
+        &-img {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .gallery-lightbox__left-arrow {
+            position: absolute;
+            top: 44%;
+            left: 10px;
+            transform: translateY(-50%) rotate(180deg);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            background-image: url(../../../public/images/icon-next.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1001;
+
+            &:hover {
+                background-color: darken(#fff, 10%);
+            }
+        }
+
+        .gallery-lightbox__right-arrow {
+            position: absolute;
+            top: 44%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            background-image: url(../../../public/images/icon-next.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            z-index: 1001;
+
+            &:hover {
+                background-color: darken(#fff, 10%);
+            }
+        }
+
+    }
+
+    &__carousel {
+        display: flex;
+        justify-content: space-evenly;
+
+        &-element {
+            width: 18%;
+            border-radius: 15px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &--active {
+                box-shadow: 0 0 0 2px $orange;
+            }
+        }
+    }
+
+    &__close-icon {
+        @include bgc-img(20px, 23px, icon-close, svg);
+        position: absolute;
+        top: -30px;
+        right: 0;
+        z-index: 2000;
+        cursor: pointer;
+
+        &:hover {
+            filter: invert(52%) sepia(82%) saturate(1579%) hue-rotate(347deg) brightness(102%) contrast(102%);
+        }
+    }
+}

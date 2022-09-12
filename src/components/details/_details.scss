@@ -1,0 +1,174 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.details {
+    padding: 20px;
+
+    @include mq(medium) {
+        width: 50%;
+    }
+
+    @include mq(big) {
+        padding: 25px 70px;
+        max-width: 600px;
+    }
+
+    &__company-name {
+        color: $orange;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    &__model-name {
+        padding: 12px 0;
+        color: $very-dark-blue;
+        font-size: 2.4rem;
+        line-height: 2.2rem;
+
+        @include mq(medium) {
+            padding: 24px 0 30px;
+            font-size: 3.2rem;
+            line-height: 3.2rem;
+        }
+    }
+
+    &__description {
+        color: $dark-grayish-blue;
+        font-size: 1.4rem;
+        line-height: 2rem;
+
+        @include mq(medium) {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            margin-bottom: 10%;
+        }
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+
+        @include mq(medium) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5%;
+        }
+
+        .price__current {
+            display: flex;
+            align-items: center;
+
+            @include mq(medium) {
+                margin-bottom: 8px;
+            }
+
+            &-value {
+                margin-right: 10px;
+                color: $very-dark-blue;
+                font-size: 2.4rem;
+                font-weight: 700;
+            }
+
+            &-discount {
+                display: block;
+                padding: 2px 6px;
+                border-radius: 5px;
+                background-color: $pale-orange;
+                color: $orange;
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
+        }
+
+        .price__previous {
+            color: $grayish-blue;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: line-through;
+        }
+
+    }
+
+    &__buy {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(medium) {
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        & .counter {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 18px;
+            border-radius: 8px;
+            background: $light-grayish-blue;
+
+            @include mq(medium) {
+                width: 40%;
+            }
+
+            &__quantity {
+                flex-grow: 1;
+                font-size: 1.6rem;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            &__remove {
+                @include bgc-img(12px, 4px, icon-minus, svg);
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(80%);
+                }
+            }
+
+            &__add {
+                @include bgc-img(12px, 12px, icon-plus, svg);
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(80%);
+                }
+            }
+        }
+
+        & .add-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 15px;
+            padding: 18px;
+            border: 0;
+            border-radius: 8px;
+            background-color: $orange;
+            color: $white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($orange, 10%)
+            }
+
+            @include mq(medium) {
+                margin-top: 0;
+            }
+
+            &__icon {
+                @include bgc-img(16px, 14px, icon-cart, svg);
+                margin-right: 14px;
+                filter: brightness(0) invert(100%);
+            }
+        }
+    }
+}

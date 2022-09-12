@@ -3,14 +3,24 @@
 
 .cart {
     position: absolute;
+    top: 40px;
     right: 50%;
     transform: translateX(50%);
     width: 95%;
     max-width: 350px;
-    margin-top: 5px;
     padding: 15px 20px;
     border-radius: 8px;
     background-color: $white;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 998;
+    transition: .2s linear;
+
+    &--active {
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+    }
 
     @include mq(small) {
         right: 0;
@@ -43,11 +53,16 @@
         justify-content: space-around;
 
         .info {
+            display: none;
             padding: 50px 0;
             color: $dark-grayish-blue;
             font-size: 1.4rem;
             font-weight: 700;
             text-align: center;
+
+            &--active {
+                display: block;
+            }
         }
 
         .element {
@@ -57,14 +72,14 @@
             padding: 12px 0;
             font-size: 1.4rem;
 
-            &.invisible {
-                display: none
-            }
-
             &__pic {
-                @include bgc-img(50px, 50px, image-product-1-thumbnail, jpg);
+                width: 50px;
+                height: 50px;
                 margin-right: 15px;
                 border-radius: 4px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
             }
 
             &__desc {
@@ -90,6 +105,7 @@
     }
 
     &__button {
+        display: none;
         width: 100%;
         padding: 12px;
         border: 0;
@@ -103,9 +119,9 @@
         &:hover {
             background-color: darken($orange, 10%);
         }
-    }
-}
 
-.invisible {
-    display: none;
+        &--active {
+            display: block;
+        }
+    }
 }
