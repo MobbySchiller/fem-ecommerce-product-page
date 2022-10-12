@@ -1,5 +1,6 @@
 import './_gallery.scss';
 import { lightbox } from '../lightbox/lightbox';
+import { darkBg } from '../header/header';
 
 export let CLICKED_IMAGE = 1;
 
@@ -18,6 +19,7 @@ class Gallery {
 
     openLightbox() {
         lightbox.container.classList.add('gallery-lightbox--active');
+        darkBg.classList.add('dark-background--active');
     }
 
     changeImage(e) {
