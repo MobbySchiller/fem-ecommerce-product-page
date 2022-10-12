@@ -1,5 +1,6 @@
 import './_lightbox.scss';
 import { CLICKED_IMAGE } from '../gallery/gallery';
+import { darkBg } from '../header/header';
 
 console.log(CLICKED_IMAGE);
 
@@ -67,6 +68,7 @@ class Lightbox {
 
     closeLightbox() {
         lightbox.container.classList.remove('gallery-lightbox--active');
+        darkBg.classList.remove('dark-background--active');
     }
 }
 
