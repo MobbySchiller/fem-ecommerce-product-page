@@ -191,12 +191,13 @@
 .dark-background {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: $very-dark-blue;
     opacity: 0.7;
     visibility: hidden;
-    z-index: 998;
+    z-index: 1000;
 
     &--active {
         visibility: visible;
