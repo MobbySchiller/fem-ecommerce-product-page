@@ -54,7 +54,7 @@
         height: 100vh;
         padding: 22px 21px;
         background-color: $white;
-        z-index: 999;
+        z-index: 1001;
         transition: .2s;
 
         &--active {
@@ -67,6 +67,7 @@
             max-width: none;
             height: auto;
             padding: 0;
+            z-index: 999;
         }
 
         .nav__close-icon {
@@ -148,10 +149,6 @@
         margin-right: 12px;
         @include bgc-img(22px, 20px, icon-cart, svg);
         cursor: pointer;
-
-        &:hover {
-            filter: brightness(0);
-        }
 
         &-number {
             display: block;
